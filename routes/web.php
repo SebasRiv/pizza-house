@@ -42,3 +42,9 @@ Route::get('/pizzas', function () {
     // return 'pizzas'; //plain text
     // return ['name' => 'veg pizza', 'base' => 'classic']; //json
 });
+
+Route::get('/pizzas/{id}', function ($id) {
+
+    // use the $id variable to query the db for a record
+    return view('details', ['id' => $id]);
+});
