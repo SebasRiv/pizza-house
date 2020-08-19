@@ -1,27 +1,15 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="flex-center position-ref full-height">
+<div class="wrapper pizza-index">
 
-    <div class="content">
-        <div class="title m-b-md">
-            Pizzas List
-        </div>
-
-        <!-- @for($i = 0; $i < 5; $i++)
-                    <p>the value of i is {{ $i }}</p>
-                @endfor -->
-
-        <!-- @for($i = 0; $i < count($pizzas); $i++)
-                    <p>{{ $pizzas[$i]['type'] }}</p>
-                @endfor -->
-
-        @foreach($pizzas as $pizza)
-        <div>
-            {{ $pizza->name }} - {{ $pizza->type }} - {{ $pizza->base }}
-        </div>
-        @endforeach
-
+    <h1>Pizza Orders</h1>
+    @foreach($pizzas as $pizza)
+    <div class="pizza-item">
+        <img src="/img/pizza.png" alt="pizza icon">
+        <h4><a href="/pizzas/{{ $pizza->id }}">{{ $pizza->name }}</a></h4>
     </div>
+    @endforeach
+
 </div>
 @endsection
